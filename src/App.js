@@ -3,6 +3,7 @@ import './App.css';
 import React, { useEffect } from "react";
 import { onMessage } from "firebase/messaging";
 import { messaging } from "./firebase";
+import { requestPermission } from "./requestPermission"
 
 function App() {
   function test() {
@@ -26,11 +27,13 @@ function App() {
       // Exibir notificação ou atualizar o estado do app
     });
   }, []);
+
   return (
     <div className="App">
       {test()}
       {console.log('outro teste')}
-      <h1>Título dentro do app</h1>
+      <h1>Carregou o App.js</h1>
+      <requestPermission />
     </div>
   );
 }
